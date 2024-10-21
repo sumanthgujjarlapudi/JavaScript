@@ -1,0 +1,54 @@
+<html>
+  <head>
+<style>
+  input{
+    width: 100%;
+    height: 100px;
+  }
+  fieldset{
+    height: 100px;
+  }
+</style>
+  </head>
+  <body>
+    <input id="Id1"type="text" placeholder="Enter Text">
+   <fieldset>
+    <p id="return"></p>
+   </fieldset>
+    <br>
+    <label for="lang">Select the language</label>
+    <select  name="lang" id="lang">
+      <option value="Eng">English</option>
+      <option value="hin">Hindi</option>
+      <option value="tel">Telugu</option>
+      <option value="fre">French</option>
+      <option value="dut">Dutch</option>
+    </select>
+    <button onclick="Transilate()">Transilate</button>
+    <script>
+      function Transilate(){
+        const lang= document.getElementById('lang').value;
+        switch(lang) {
+                case 'Eng':
+                document.getElementById('return').innerText="Hi, welcome to Google translation";
+                    break;
+                case 'hin':
+                document.getElementById('return').innerText="नमस्ते, Google अनुवाद में आपका स्वागत है";
+                    break;
+                case 'tel':
+                document.getElementById('return').innerText="హాయ్, Google అనువాదానికి స్వాగతం";
+                    break;
+                case 'fre':
+                document.getElementById('return').innerText="Bonjour, bienvenue sur Google traduction";
+                    break;
+                case 'dut':
+                document.getElementById('return').innerText="Hallo, welkom bij Google vertaling";
+                    break;
+                default:
+                    targetLang = 'Eng';
+      }
+    }
+
+    </script>
+  </body>
+</html>

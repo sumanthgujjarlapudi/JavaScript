@@ -1,0 +1,29 @@
+<html>
+  <head></head>
+  </head>
+  <body>
+    <div id="ID1">
+      <h1>Salary Caliculator</h1>
+      <label for="payscale">Monthly Payscale :</label>
+      <input type="number" id="payscale" value="25000">
+      <label for="deduction" >Enter the deduction value :</label>
+      <input type="number" id="deduction" placeholder="Deduction amount">
+      <button onclick="Salary()">Caliculate Salary</button>
+      <p id="Finalsalary"></p>
+      <script>
+        function Salary(){
+          const payscale= document.getElementById('payscale').value;
+          const deduction=document.getElementById('deduction').value;
+          if(deduction ==="")
+        {
+          alert("please enter the value");
+          return;
+        }
+        const finalpay=payscale-deduction;
+        document.getElementById('Finalsalary').innerText="Final Salary is :"+finalpay;
+        }
+      </script>
+    
+    </div>
+  </body>
+</html>

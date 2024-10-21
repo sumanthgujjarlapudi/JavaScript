@@ -1,0 +1,58 @@
+<html> 
+    <title> Login</title>
+    <head>
+    <style>
+      body{
+        align-content: center;
+        padding-left: 43%;
+        padding-top: 10%;
+        margin-bottom: 20%;
+        border-width: 2px;
+        width: 20%;
+        height: 20%;
+
+      }
+      .login-container{
+        border: 1px solid black;
+        text-align: center;
+
+      }
+      button{
+        justify-content: center;
+        align-items: center;
+        background-color: #86cd57;
+        border-radius: 1000px;
+        box-sizing: content-box;
+      }
+
+    </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>Login</h2>
+                <input type="text" id="username" placeholder="User Name"><br><br>
+                <input type="password" id="password"placeholder="Password"><br><br>
+                    <button onclick ="login ()"><b>Login</b></button>
+                    <div class="redirect" id="redirect"></div>
+                </div>
+                <script>
+                    function login () {
+                        const username=document.getElementById('username').value;
+                        const password=document.getElementById('password').value;
+                     const crctusername = 'admin';
+                     const crctpassword = 'admin@123';
+                     if (username === crctusername){
+                        if (password=== crctpassword){
+                            alert("login successfull");
+                        } else {
+                            alert("Invalid username or password");
+                        }
+                        }else {
+                            alert("Invalid username or password");
+
+                         }
+                        } 
+  
+                </script>
+    </body>
+</html>

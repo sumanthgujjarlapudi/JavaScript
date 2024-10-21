@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      body{
+        text-align: center;
+        padding-top: 70px;
+        display: flex;
+        justify-content: center;
+      }
+      #Id1{
+        
+        border: 12px solid gray;
+        width: 22%;
+        height: 45%;
+      }
+      button{
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        color: white;
+        border-radius: 1000px;
+        box-sizing: content-box;
+        height: 27px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Id1">
+    <h1>Actual Price Calculator </h1>
+    <input type="number" id="incost" placeholder="Enter The Value"><br><br>
+    <button onclick="caliculate()"><b>Caliculate</b></button><br><br>
+    <div id="actual"></div>
+  </div>
+  <script>
+    function caliculate(){
+      let iputval =document.getElementById('incost').value;
+      const outputval =parseFloat((iputval)*0.2);
+      document.getElementById('actual').textContent='Value Of The Actual Price On 20% Discount Is : Rs'+outputval;
+
+    }
+  </script>
+  </body>
+</html>

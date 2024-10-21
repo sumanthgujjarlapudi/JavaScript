@@ -1,0 +1,66 @@
+<html>
+
+  <head>
+<style>
+  #ID1{
+    border: 12px solid rgba(72, 44, 44, 0.564);
+    border-width: 5px;
+  }
+  body{
+    align-content: center;
+    padding-left: 570px;
+    padding-right: 633px;
+    padding-bottom: 130px;
+   
+  }
+  input{
+    width: 300px;
+    height: 40px;
+  }
+  button{
+    width: 300px;
+    height: 30px;
+    background-color:gray;
+    color: white;
+  }
+
+</style>
+  </head>
+
+  <body>
+    <h1>Account Details</h1>
+    <div id="Id1">
+      <br><label for="acntnumb"> Acount Number : </label><br>
+      <input type="number" id="acntnumb" placeholder="Enter Your Acount Number"><br><br>
+      <label for="name" >Name :</label><br><br>
+      <input type="text" id="actname" placeholder="Enetr Your Name"><br><br>
+      <label for="diposit" >Diposit Amout :</label><br><br>
+      <input type="number" id="dipamount" placeholder="Enetr Your Diposit Amount"><br><br>
+      <label for="withdraw" >WithDraw Amount :</label><br><br>
+      <input type="number" id="withdraw" placeholder="Enter Your WithDraw Amount"><br><br>
+      <button onclick="diposit()"><b>Deposit</b></button><br>
+      <button onclick="withdraw()"><b>Withdraw</b></button><br>
+      <button onclick="checkbal()"><b>Check Ballance</b></button><br>
+      <p id="output"></p>
+      </div>
+      <script>
+        var bal=0;
+        function diposit(){
+          var depositAmount = parseFloat(document.getElementById('dipamount').value);
+          bal += depositAmount;
+          alert("Rs"+depositAmount+" Deposited ");
+          
+        }
+        function withdraw(){
+          var withdrawamt =parseFloat(document.getElementById('withdraw').value);
+          bal -= withdrawamt;
+          alert("Rs"+withdrawamt+" Withdrawed");
+        }
+        function checkbal(){
+        var name=document.getElementById('actname').value;
+        var actnumb=document.getElementById('acntnumb').value;
+          document.getElementById('output').innerText="Acount Name : "+name+" Acount Number : "+actnumb+" Balance Is : "+bal;
+        }
+      </script>
+  </body>
+</html>

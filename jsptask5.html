@@ -1,0 +1,56 @@
+<html>
+  <head>
+<style>
+  body{
+    align-content: center;
+    padding-left: 570px;
+    padding-right: 633px;
+    padding-bottom: 130px;
+   
+  }
+  input{
+    width: 300px;
+    height: 40px;
+  }
+  button{
+    width: 300px;
+    height: 30px;
+    background-color:gray;
+    color: white;
+  }
+</style>
+  </head>
+  <body>
+    <div>
+    <lable for="sal">Monthly Salary</lable><br>
+    <input id="sal1" type="number" placeholder="Enter your salary"><br> 
+    <button onclick="check1()">submit</button>
+    <p id="return1"></p>
+    </div>
+    <div id="ID1">
+    <label for="bal">Bank Balance</label>
+    <input id="bnkbal" type="number" placeholder="Enter your Bank Balance"><br>
+    <p id="return2"></p>
+    <button onclick="check()"><b>SUBMIT</b></button>
+    <p id="output"></p>
+    </div>
+  <script>
+    function check1(){
+      let sal=document.getElementById('')
+    }
+    function check(){
+        let sal=parseFloat(document.getElementById('sal1').value);
+      let bal=parseFloat(document.getElementById('bnkbal').value);
+      if (sal>=30000&&bal>=20000)
+    {
+      document.getElementById('output').innerText="You Are Elligible To Lone ";
+    }
+    else{
+      document.getElementById('return1').innerText="You Are Not Elligible To Lone ";
+
+    }
+      
+      }
+  </script>
+  </body>
+</html>

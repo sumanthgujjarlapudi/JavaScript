@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <style>
+      
+    </style>
+
+  </head>
+  <body>
+    <div id="ID1">
+      <label for="GPA">GPA</label>
+      <input id="input1" type="number" placeholder="Enter your GPA">
+      <button id="button" onclick="check()"><b>SUBMIT</b></button>
+      <p id="return1"></p>
+    </div>
+    <script>
+      function check(){
+        let inp=document.getElementById('input1').value;
+       
+       if(inp>=7.5 && inp<=10.0)
+       {
+        document.getElementById('return1').innerText=" You are eligible for a scholarship based on your GPA .";
+       }
+       else if(inp>10.0)
+       {
+        alert('Invalid Input');
+       }
+       else{
+        document.getElementById('return1').innerText=" You are not eligible for a scholarship based on your GPA .";
+       }
+      
+      }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+  <head></head>
+  <body>
+    <label for="inpval">Enter the values</label>
+    <input id="inp1" type="text" placeholder="enter values with (,)"><br><br>
+    <button id="arrydec" onclick="desending()">Sort</button>
+    <p id="result"></p>
+    <script>
+      function desending(){
+        let input=document.getElementById('inp1').value;
+        let array= input.split(',').map(Number);
+        array.sort((a, b) => b - a);
+        document.getElementById('result').innerText=""+array.join(', ');
+      }
+    </script>
+
+  </body>
+</html>

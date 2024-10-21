@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Loan EMI Calculator</h1>
+    <label for="loanAmount">Loan Amount:</label>
+    <input type="number" id="loanAmount" required><br><br>
+    
+    <label for="interestRate">Interest Rate (% per annum):</label>
+    <input type="number" id="interestRate" step="0.01" required><br><br>
+    
+    <label for="loanTerm">Loan Term (in years):</label>
+    <input type="number" id="loanTerm" required><br><br>
+    
+    <button onclick="calculateMonthlyPayment()">Calculate EMI</button>
+    <button onclick="checkLoanStatus()">Check Loan Status</button>
+    
+    <p id="result"></p>
+    <script>
+      class Loan {
+    constructor(loanAmount, interestRate, loanTerm) {
+        this.loanAmount = loanAmount;
+        this.interestRate = interestRate;
+        this.loanTerm = loanTerm * 12; // converting years to months
+        this.emisPaid = 0;
+    }
+
+    calculateMonthlyPayment() {
+        const monthlyRate = this.interestRate / 100 / 12;
+        const emi = (this.loanAmount * monthlyRate * Math.pow(1 + monthlyRate, this.loanTerm)) / (Math.pow(1 + monthlyRate, this.loanTerm) - 1);
+        return emi.toFixed(2);
+    }
+
+    checkLoanStatus(emi) {
+        const totalPaid = emi * this.emisPaid;
+        const totalPayable = emi * this.loanTerm;
+        const remaining = totalPayable - totalPaid;
+        return {
+            emisPaid: this.emisPaid,
+            totalPaid: totalPaid.toFixed(2),
+            remaining: remaining.toFixed(2)
+        };
+    }
+}
+
+function calculateMonthlyPayment() {
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value);
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+    const loan = new Loan(loanAmount, interestRate, loanTerm);
+    const emi = loan.calculateMonthlyPayment();
+
+    document.getElementById('result').innerText = `Monthly EMI: ₹${emi}`;
+}
+
+function checkLoanStatus() {
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value);
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+    const loan = new Loan(loanAmount, interestRate, loanTerm);
+    const emi = loan.calculateMonthlyPayment();
+    loan.emisPaid = 12; // Example: assume 12 EMIs have been paid
+
+    const status = loan.checkLoanStatus(emi);
+
+    document.getElementById('result').innerHTML = `
+        EMIs Paid: ${status.emisPaid}<br>
+        Total Paid: ₹${status.totalPaid}<br>
+        Remaining Amount: ₹${status.remaining}
+    `;
+}
+
+    </script>
+</body>
+</html>

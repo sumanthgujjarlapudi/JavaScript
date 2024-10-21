@@ -1,0 +1,50 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <label for="inpval">Enter the values</label><br><br>
+    <input id="Id1" type="number">
+    <input id="Id2" type="number"><br><br>
+    <button id="add" onclick="add()">Add</button>
+    <button id="sub" onclick="sub()">Subtract</button>
+    <button id="div" onclick="div()">Division</button>
+    <button id="mul" onclick="mul()">Multiplication</button>
+    <button id="mod" onclick="mod()">Modulus</button>
+    <p id="return"></p>
+    <script>
+      function add(){
+        const val1=parseFloat(document.getElementById('Id1').value);
+        const val2=parseFloat(document.getElementById('Id2').value);
+        let val =val1+val2;
+        document.getElementById('return').innerText="the value is :"+ val;
+      }
+      function sub(){
+        const val1=parseFloat(document.getElementById('Id1').value);
+        const val2=parseFloat(document.getElementById('Id2').value);
+        let val= val1 - val2;
+        document.getElementById('return').innerText="the value is :"+val;
+      }
+      function div(){
+        const val1=parseFloat(document.getElementById('Id1').value);
+        const val2=parseFloat(document.getElementById('Id2').value);
+        let val= val1 / val2;
+        document.getElementById('return').innerText="the value is :"+val;
+      }
+      function mul(){
+        const val1=parseFloat(document.getElementById('Id1').value);
+        const val2=parseFloat(document.getElementById('Id2').value);
+        let val= val1 * val2;
+        document.getElementById('return').innerText="the value is :"+val;
+      }
+      function mod(){
+        const val1=parseFloat(document.getElementById('Id1').value);
+        const val2=parseFloat(document.getElementById('Id2').value);
+        let val= val1 % val2;
+        document.getElementById('return').innerText="The value is :"+val;
+      }
+
+    </script>
+
+  </body>
+</html>
